@@ -6,6 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Status Bar 배경색 -->
+        <item name="android:statusBarColor">@color/colorWhite</item>
+
+        <!-- Status Bar 글자색 -->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 </resources>

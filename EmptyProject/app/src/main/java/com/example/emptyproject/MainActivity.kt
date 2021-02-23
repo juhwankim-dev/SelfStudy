@@ -1,16 +1,17 @@
 package com.example.emptyproject
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import android.util.DisplayMetrics
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.google.android.material.snackbar.Snackbar
+import androidx.core.view.ViewCompat
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_main.*
-import com.google.android.material.tabs.TabLayoutMediator
+import java.lang.Math.abs
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,35 +19,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        init()
-        //tabLayout.tabIconTint = resources.getColorStateList(R.color.tab_icon, null)
-    }
+        /* 여백, 너비에 대한 정의 */
+        val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin) // dimen 파일 안에 크기를 정의해두었다.
+        val pagerWidth = resources.getDimensionPixelOffset(R.dimen.pagerWidth) // dimen 파일이 없으면 생성해야함
+        val screenWidth = resources.displayMetrics.widthPixels // 스마트폰의 너비 길이를 가져옴
+        val offsetPx = screenWidth - pageMarginPx - pagerWidth
 
-    private fun init() {
-        val tabIconList = arrayListOf(R.drawable.save, R.drawable.profile)
-        //val tabTextList = arrayListOf("HOME", "CHATTING", "NEWS", "SETTING")
-
-        viewPager_profile.adapter = CustomFragmentStateAdapter(this)
-        TabLayoutMediator(tabLayout, viewPager_profile) {
-                tab, position ->
-            tab.setIcon(tabIconList[position])
-            //tab.text = tabTextList[position]
-        }.attach()
-    }
-
-    /* 4개의 프래그먼트를 달아줄 어댑터 */
-    inner class CustomFragmentStateAdapter(fragmentActivity: FragmentActivity):
-        FragmentStateAdapter(fragmentActivity) {
-        override fun getItemCount(): Int {
-            return 2
+        viewPager_idol.setPageTransformer { page, position ->
+            page.translationX = position * -offsetPx
         }
 
-        override fun createFragment(position: Int): Fragment {
-            return when(position) {
-                0 -> MyFragment1()
-                else -> MyFragment2()
-            }
-        }
+        viewPager_idol.offscreenPageLimit = 1 // 몇 개의 페이지를 미리 로드 해둘것인지
+        viewPager_idol.adapter = ViewPagerAdapter(getIdolList())
+        viewPager_idol.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+    }
+
+    private fun getIdolList(): ArrayList<Int> {
+        return arrayListOf<Int>(R.drawable.icon1, R.drawable.icon2, R.drawable.icon3, R.drawable.icon4)
     }
 }
 
