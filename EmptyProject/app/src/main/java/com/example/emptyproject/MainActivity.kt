@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,50 +18,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //logAndToast("onCreate")
+        init()
+        //tabLayout.tabIconTint = resources.getColorStateList(R.color.tab_icon, null)
+    }
 
-        button.setOnClickListener {
-            startActivity(Intent(this, SecondActivity::class.java))
+    private fun init() {
+        val tabIconList = arrayListOf(R.drawable.save, R.drawable.profile)
+        //val tabTextList = arrayListOf("HOME", "CHATTING", "NEWS", "SETTING")
+
+        viewPager_profile.adapter = CustomFragmentStateAdapter(this)
+        TabLayoutMediator(tabLayout, viewPager_profile) {
+                tab, position ->
+            tab.setIcon(tabIconList[position])
+            //tab.text = tabTextList[position]
+        }.attach()
+    }
+
+    /* 4개의 프래그먼트를 달아줄 어댑터 */
+    inner class CustomFragmentStateAdapter(fragmentActivity: FragmentActivity):
+        FragmentStateAdapter(fragmentActivity) {
+        override fun getItemCount(): Int {
+            return 2
         }
 
-        var test = HtmlCrawler()
-        test.requestPost()
+        override fun createFragment(position: Int): Fragment {
+            return when(position) {
+                0 -> MyFragment1()
+                else -> MyFragment2()
+            }
+        }
     }
-
-/*    override fun onStart() {
-        super.onStart()
-        logAndToast("onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        logAndToast("onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        logAndToast("onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        logAndToast("onStop")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        logAndToast("onRestart")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        logAndToast("onDestroy")
-    }
-
-    private fun logAndToast(lifeCycle: String) {
-        Log.v("LifeCycle", "${lifeCycle}이 호출되었습니다.")
-        Toast.makeText(this, "${lifeCycle}이 호출되었습니다.", Toast.LENGTH_SHORT).show()
-    }*/
 }
 
 

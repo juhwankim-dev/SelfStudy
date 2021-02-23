@@ -50,4 +50,6 @@ dependencies {
     /* optional - RxJava support for Room */
     implementation "android.arch.persistence.room:rxjava2:1.1.1"
 
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'com.google.android.material:material:1.2.1'
 }
