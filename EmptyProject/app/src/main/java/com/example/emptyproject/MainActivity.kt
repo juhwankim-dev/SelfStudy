@@ -6,36 +6,51 @@ import android.util.DisplayMetrics
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Math.abs
 
+private const val NUM_PAGES = 2
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /* 여백, 너비에 대한 정의 */
-        val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin) // dimen 파일 안에 크기를 정의해두었다.
-        val pagerWidth = resources.getDimensionPixelOffset(R.dimen.pagerWidth) // dimen 파일이 없으면 생성해야함
-        val screenWidth = resources.displayMetrics.widthPixels // 스마트폰의 너비 길이를 가져옴
-        val offsetPx = screenWidth - pageMarginPx - pagerWidth
+        viewPager_icon.adapter = ScreenSlidePagerAdapter(this)
+        viewPager_icon.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
-        viewPager_idol.setPageTransformer { page, position ->
-            page.translationX = position * -offsetPx
-        }
-
-        viewPager_idol.offscreenPageLimit = 1 // 몇 개의 페이지를 미리 로드 해둘것인지
-        viewPager_idol.adapter = ViewPagerAdapter(getIdolList())
-        viewPager_idol.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        spring_dots_indicator.setViewPager2(viewPager_icon)
     }
 
-    private fun getIdolList(): ArrayList<Int> {
-        return arrayListOf<Int>(R.drawable.icon1, R.drawable.icon2, R.drawable.icon3, R.drawable.icon4)
+    override fun onBackPressed() {
+        if (viewPager.currentItem == 0) {
+            // If the user is currently looking at the first step, allow the system to handle the
+            // Back button. This calls finish() on this activity and pops the back stack.
+            super.onBackPressed()
+        } else {
+            // Otherwise, select the previous step.
+            viewPager.currentItem = viewPager.currentItem - 1
+        }
+    }
+
+    private inner class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
+        override fun getItemCount(): Int = NUM_PAGES
+
+        override fun createFragment(position: Int): Fragment {
+            return when(position){
+                0 -> MyFragment1()
+                else -> MyFragment2()
+            }
+        }
     }
 }
 

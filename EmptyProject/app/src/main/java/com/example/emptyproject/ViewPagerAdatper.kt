@@ -19,6 +19,6 @@ class ViewPagerAdapter(idolList: ArrayList<Int>) : RecyclerView.Adapter<ViewPage
     inner class PagerViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
         (LayoutInflater.from(parent.context).inflate(R.layout.idol_list_item, parent, false)){
 
-        val idol = itemView.imageView_idol!!
+        val idol = itemView.imageView_icon!!
     }
 }
