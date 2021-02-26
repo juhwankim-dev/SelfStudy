@@ -11,35 +11,25 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="두 번째 프래그먼트"
+        android:layout_marginBottom="226dp"
+        android:text="보유 중인 티켓이 없습니다."
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="165dp"
+        android:id="@+id/imageView2"
+        android:layout_width="190dp"
         android:layout_height="0dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="190dp"
-        android:src="@drawable/p2"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        android:layout_marginTop="258dp"
+        android:src="@drawable/p3"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/p4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
