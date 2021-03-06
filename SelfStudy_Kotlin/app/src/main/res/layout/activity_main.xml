@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="IU"
-            type="com.example.selfstudy_kotlin.MainActivity" />
+            name="user"
+            type="com.example.selfstudy_kotlin.UserViewModel" />
     </data>
 
     <LinearLayout
@@ -15,24 +15,14 @@
         tools:context=".MainActivity">
 
         <TextView
+            android:id="@+id/textView_height"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{IU.name}" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{IU.age}" />
+            android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/btn_change"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:imageUrl="@{IU.imageUrl}" />
+            android:text="키 증가"
+            android:onClick="@{()->user.increase()}"/>
     </LinearLayout>
 </layout>
