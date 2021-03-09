@@ -3,27 +3,28 @@ package com.example.selfstudy_kotlin
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import androidx.room.Room
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 class TodoViewModel(application: Application) : AndroidViewModel(application) {
-/*    private val todoDao: TodoDao
-    val todoList: LiveData<List<Todo>>
+    private val todoDao: TodoDao
+    private val todoList: LiveData<List<Todo>>
 
     init {
-        var db = Room.databaseBuilder(application, AppDatabase::class.java, "database-name").allowMainThreadQueries().build()
-        todoDao = db.todoDao()
+        var db = AppDatabase.getInstance(application)
+        todoDao = db!!.todoDao()
         todoList = db.todoDao().getAll()
-    }*/
-    private val todoDao by lazy {
-    var db = Room.databaseBuilder(application, AppDatabase::class.java, "database-name").allowMainThreadQueries().build()
-    db.todoDao()
-}
-
-    val todoList: LiveData<List<Todo>> by lazy {
-        todoDao.getAll()
     }
 
-    fun insert(todo: Todo){
+    fun insert(todo: Todo) {
         todoDao.insert(todo)
+    }
+
+    fun getAll(): LiveData<List<Todo>> {
+        return todoDao.getAll()
     }
 }
