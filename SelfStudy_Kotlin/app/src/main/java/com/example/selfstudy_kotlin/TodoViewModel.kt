@@ -3,12 +3,9 @@ package com.example.selfstudy_kotlin
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
-import androidx.room.Room
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
+import com.example.selfstudy_kotlin.database.AppDatabase
+import com.example.selfstudy_kotlin.database.Todo
+import com.example.selfstudy_kotlin.database.TodoDao
 
 class TodoViewModel(application: Application) : AndroidViewModel(application) {
     private val todoDao: TodoDao

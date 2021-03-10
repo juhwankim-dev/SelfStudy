@@ -1,4 +1,4 @@
-package com.example.selfstudy_kotlin
+package com.example.selfstudy_kotlin.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

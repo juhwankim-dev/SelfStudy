@@ -1,4 +1,4 @@
-package com.example.selfstudy_kotlin
+package com.example.selfstudy_kotlin.database
 
 import android.content.Context
 import androidx.room.Database
@@ -15,12 +15,13 @@ abstract class AppDatabase : RoomDatabase() {
         @Synchronized
         fun getInstance(context: Context): AppDatabase? {
             if (instance == null) {
-                instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "database-name"
-                )
-                    .build()
+                synchronized(AppDatabase::class){
+                    instance = Room.databaseBuilder(
+                            context.applicationContext,
+                            AppDatabase::class.java,
+                            "database-name"
+                    ).build()
+                }
             }
             return instance
         }

@@ -1,7 +1,8 @@
-package com.example.selfstudy_kotlin
+package com.example.selfstudy_kotlin.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.selfstudy_kotlin.database.Todo
 
 @Dao
 interface TodoDao {
