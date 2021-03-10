@@ -12,7 +12,7 @@ import com.example.selfstudy_kotlin.fragments.TodoAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnItemClick {
 
     private lateinit var binding: ActivityMainBinding
     private val model: TodoViewModel by viewModels()
@@ -39,7 +39,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRecyclerView(){
         binding.recyclerViewTodo.layoutManager = LinearLayoutManager(this)
-        adapter = TodoAdapter()
+        adapter = TodoAdapter(this)
         binding.recyclerViewTodo.adapter = adapter
+    }
+
+    override fun deleteTodo(todo: Todo) {
+        lifecycleScope.launch(Dispatchers.IO){
+            model.delete(todo)
+        }
     }
 }

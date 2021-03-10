@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.selfstudy_kotlin.OnItemClick
 import com.example.selfstudy_kotlin.R
 import com.example.selfstudy_kotlin.database.Todo
 import com.example.selfstudy_kotlin.databinding.ActivityMainBinding
 import com.example.selfstudy_kotlin.databinding.TodoItemBinding
 
-class TodoAdapter() : RecyclerView.Adapter<TodoViewHolder>() {
+class TodoAdapter(listener: OnItemClick) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
+    private val mCallback = listener
     private val items = ArrayList<Todo>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : TodoViewHolder{
@@ -32,14 +34,16 @@ class TodoAdapter() : RecyclerView.Adapter<TodoViewHolder>() {
         items.clear()
         items.addAll(todo)
     }
-}
 
-class TodoViewHolder(private val binding: TodoItemBinding):RecyclerView.ViewHolder(binding.root){
+    inner class TodoViewHolder(private val binding: TodoItemBinding):RecyclerView.ViewHolder(binding.root){
 
-    fun bind(item: Todo){
-        binding.tvTodo.text = item.content
-        binding.ivIcon.setOnClickListener {
-            Log.v("클릭됨", item.content + "클릭됨")
+        fun bind(item: Todo){
+            binding.tvTodo.text = item.content
+            binding.ivIcon.setOnClickListener {
+                mCallback.deleteTodo(item)
+                Log.v("작동함", "작동함")
+            }
         }
     }
 }
+

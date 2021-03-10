@@ -21,6 +21,10 @@ class TodoViewModel(application: Application) : AndroidViewModel(application) {
         todoDao.insert(todo)
     }
 
+    fun delete(todo: Todo){
+        todoDao.delete(todo)
+    }
+
     fun getAll(): LiveData<List<Todo>> {
         return todoDao.getAll()
     }
