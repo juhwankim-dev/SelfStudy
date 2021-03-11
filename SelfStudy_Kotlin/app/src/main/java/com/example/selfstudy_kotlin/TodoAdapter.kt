@@ -1,14 +1,10 @@
-package com.example.selfstudy_kotlin.fragments
+package com.example.selfstudy_kotlin
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.selfstudy_kotlin.OnItemClick
-import com.example.selfstudy_kotlin.R
 import com.example.selfstudy_kotlin.database.Todo
-import com.example.selfstudy_kotlin.databinding.ActivityMainBinding
 import com.example.selfstudy_kotlin.databinding.TodoItemBinding
 
 class TodoAdapter(listener: OnItemClick) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
@@ -16,17 +12,17 @@ class TodoAdapter(listener: OnItemClick) : RecyclerView.Adapter<TodoAdapter.Todo
     private val mCallback = listener
     private val items = ArrayList<Todo>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : TodoViewHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : TodoViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = TodoItemBinding.inflate(layoutInflater)
         return TodoViewHolder(binding)
-    } // 뷰홀더 생성
+    }
 
-    override fun getItemCount(): Int { // 아이템의 총 갯수 반환
+    override fun getItemCount(): Int {
         return items.size
     }
 
-    override fun onBindViewHolder(holder: TodoViewHolder, position: Int) { // 생선된 뷰홀더에 데이터 삽입
+    override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
@@ -41,7 +37,6 @@ class TodoAdapter(listener: OnItemClick) : RecyclerView.Adapter<TodoAdapter.Todo
             binding.tvTodo.text = item.content
             binding.ivIcon.setOnClickListener {
                 mCallback.deleteTodo(item)
-                Log.v("작동함", "작동함")
             }
         }
     }

@@ -2,50 +2,27 @@ package com.example.selfstudy_kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.selfstudy_kotlin.database.Todo
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.selfstudy_kotlin.databinding.ActivityMainBinding
-import com.example.selfstudy_kotlin.fragments.TodoAdapter
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity(), OnItemClick {
+class MainActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityMainBinding
-    private val model: TodoViewModel by viewModels()
-    private lateinit var adapter: TodoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initRecyclerView()
+        // 네비게이션들을 담는 호스트
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host) as NavHostFragment
 
-        model.getAll().observe(this, Observer{
-            adapter.setList(it)
-            adapter.notifyDataSetChanged()
-        })
+        // 네비게이션 컨트롤러
+        val navController = navHostFragment.navController
 
-        binding.btnAdd.setOnClickListener {
-            lifecycleScope.launch(Dispatchers.IO){
-                model.insert(Todo(binding.editText.text.toString()))
-            }
-        }
+        // 바템 네비게이션 뷰와 네비게이션을 묶어준다.
+        NavigationUI.setupWithNavController(binding.myBottomNav, navController)
     }
 
-    private fun initRecyclerView(){
-        binding.recyclerViewTodo.layoutManager = LinearLayoutManager(this)
-        adapter = TodoAdapter(this)
-        binding.recyclerViewTodo.adapter = adapter
-    }
-
-    override fun deleteTodo(todo: Todo) {
-        lifecycleScope.launch(Dispatchers.IO){
-            model.delete(todo)
-        }
-    }
 }
