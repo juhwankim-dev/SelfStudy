@@ -3,29 +3,22 @@ package com.example.selfstudy_kotlin
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.selfstudy_kotlin.database.AppDatabase
 import com.example.selfstudy_kotlin.database.Todo
-import com.example.selfstudy_kotlin.database.TodoDao
+import com.example.selfstudy_kotlin.repository.TodoRepository
 
 class TodoViewModel(application: Application) : AndroidViewModel(application) {
-    private val todoDao: TodoDao
-    private val todoList: LiveData<List<Todo>>
-
-    init {
-        var db = AppDatabase.getInstance(application)
-        todoDao = db!!.todoDao()
-        todoList = db.todoDao().getAll()
-    }
+    private val repository = TodoRepository(application)
+    private val items = repository.getAll()
 
     fun insert(todo: Todo) {
-        todoDao.insert(todo)
+        repository.insert(todo)
     }
 
     fun delete(todo: Todo){
-        todoDao.delete(todo)
+        repository.delete(todo)
     }
 
     fun getAll(): LiveData<List<Todo>> {
-        return todoDao.getAll()
+        return items
     }
 }
