@@ -18,7 +18,6 @@ class MainViewModel : ViewModel() {
     }
 
     fun loadBaeminNotice(){
-        Log.v("로그", "$page 페이지를 불러옴")
         baeminRepository.loadBaeminNotice(page++)
     }
 

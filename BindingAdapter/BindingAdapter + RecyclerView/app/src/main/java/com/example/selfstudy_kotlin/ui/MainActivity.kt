@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val model: MainViewModel by viewModels()
-    private lateinit var noticeAdapter: NoticeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

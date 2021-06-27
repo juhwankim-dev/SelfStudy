@@ -12,7 +12,6 @@ class NoticeAdapter : RecyclerView.Adapter<NoticeAdapter.NoticeViewHolder>() {
 
     inner class NoticeViewHolder(private val binding: ItemNoticeBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(notice: Content){
-            Log.v("로그", "bind 호출")
             binding.notice = notice
         }
     }
