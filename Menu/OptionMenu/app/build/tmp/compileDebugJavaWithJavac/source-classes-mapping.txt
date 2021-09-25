@@ -1,0 +1,2 @@
+com/ssafy/optionmenuproject/BuildConfig.java
+ com.ssafy.optionmenuproject.BuildConfig
