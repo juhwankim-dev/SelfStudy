@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_red"
+        android:title="빨간 텍스트로 변경"/>
+    <item
+        android:id="@+id/menu_item_blue"
+        android:title="파란 텍스트로 변경"/>
+</menu>
