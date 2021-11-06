@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/drawable/gray_ellipse.xml" value="0.3140625" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_animation_vpactivity.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_auto_scroll_vpactivity.xml" value="0.29791666666666666" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_banner_vpactivity.xml" value="0.29791666666666666" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_default_vpactivity.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_infinite_vpactivity.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_main.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_margin_vp.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_margin_vp2.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_margin_vpactivity.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_vpwith_fragment.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_vpwith_indicator.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/activity_vpwith_tab_layout.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/fragment_first.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/fragment_second.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/idol_list_item.xml" value="0.26766304347826086" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/list_item_banner.xml" value="0.29791666666666666" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/list_item_icon.xml" value="0.25" />
+        <entry key="..\:/Users/SSAFY/GitHub/ViewPagerProject/app/src/main/res/layout/list_item_idol.xml" value="0.26766304347826086" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
