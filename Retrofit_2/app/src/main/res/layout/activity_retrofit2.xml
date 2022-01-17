@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".callback_version.src.CallbackVersionActivity">
+        tools:context=".coroutine_version.src.RetrofitActivity2">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_repo"

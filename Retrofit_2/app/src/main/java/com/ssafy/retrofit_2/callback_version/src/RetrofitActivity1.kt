@@ -8,19 +8,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ssafy.retrofit_2.common.dto.RepoResponse
 import com.ssafy.retrofit_2.R
 import com.ssafy.retrofit_2.common.adapter.RepoAdapter
-import com.ssafy.retrofit_2.callback_version.repository.RepoRepository
-import com.ssafy.retrofit_2.databinding.ActivityCallbackVersionBinding
+import com.ssafy.retrofit_2.callback_version.repository.RepoRepository1
+import com.ssafy.retrofit_2.databinding.ActivityRetrofit1Binding
 import com.ssafy.retrofit_2.callback_version.util.RetrofitCallback
 
-class CallbackVersionActivity : AppCompatActivity() {
-    private val TAG = "CallbackVersionActivity_juhwan_tag"
-    private lateinit var binding: ActivityCallbackVersionBinding
+class RetrofitActivity1 : AppCompatActivity() {
+    private val TAG = "RetrofitActivity1_juhwan"
+    private lateinit var binding: ActivityRetrofit1Binding
     lateinit var repoAdapter: RepoAdapter
     private var page = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_callback_version)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_retrofit1)
 
         initView()
         initEvent()
@@ -41,7 +41,7 @@ class CallbackVersionActivity : AppCompatActivity() {
     }
 
     private fun selectAllRepos() {
-        RepoRepository.selectAllRepos("Java", page, RepoCallback())
+        RepoRepository1().selectAllRepos("Java", page, RepoCallback())
     }
 
     inner class RepoCallback: RetrofitCallback<RepoResponse> {

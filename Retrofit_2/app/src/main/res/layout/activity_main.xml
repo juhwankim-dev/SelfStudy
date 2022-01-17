@@ -30,5 +30,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Coroutine을 사용한 예시" />
+
+        <Button
+            android:id="@+id/btn_coroutine_mvvm_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coroutine + MVVM을 사용한 예시" />
     </LinearLayout>
 </layout>

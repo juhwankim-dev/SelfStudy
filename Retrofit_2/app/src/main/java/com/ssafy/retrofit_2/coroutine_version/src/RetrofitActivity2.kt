@@ -10,20 +10,20 @@ import com.ssafy.retrofit_2.R
 import com.ssafy.retrofit_2.common.adapter.RepoAdapter
 import com.ssafy.retrofit_2.common.config.ApplicationClass.Companion.PER_PAGE
 import com.ssafy.retrofit_2.coroutine_version.util.RetrofitUtil2.Companion.repoService2
-import com.ssafy.retrofit_2.databinding.ActivityCoroutineVersionBinding
+import com.ssafy.retrofit_2.databinding.ActivityRetrofit2Binding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CoroutineVersionActivity : AppCompatActivity() {
-    private val TAG = "CoroutineVersionActivit_juhwan_tag"
-    private lateinit var binding: ActivityCoroutineVersionBinding
+class RetrofitActivity2 : AppCompatActivity() {
+    private val TAG = "RetrofitActivity2_juhwan"
+    private lateinit var binding: ActivityRetrofit2Binding
     lateinit var repoAdapter: RepoAdapter
     private var page = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_coroutine_version)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_retrofit2)
 
         initView()
         initEvent()
