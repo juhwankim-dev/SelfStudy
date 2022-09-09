@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersistentBottomSheetActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+
+        <Button
+            android:id="@+id/btn_collapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:text="collapsed" />
+
+        <Button
+            android:id="@+id/btn_expanded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:text="expanded" />
+    </LinearLayout>
+
+    <!-- Persistent Bottom Sheet -->
+    <LinearLayout
+        android:id="@+id/persistent_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#ebebeb"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="100dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <!-- persistent bottom sheet의 Content -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔼 Pull me up! 🔼"
+            android:textSize="24sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Persistent Bottom Sheet"
+            android:textSize="24sp"
+            android:paddingTop="100dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
