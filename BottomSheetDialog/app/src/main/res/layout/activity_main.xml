@@ -17,31 +17,31 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="basic bottom sheet" />
+            android:text="modal bottom sheet" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="round corner bottom sheet" />
+            android:text="round corner modal" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="persistent bottom sheet" />
+            android:text="modal example 1" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="list dialog" />
+            android:text="modal example 2" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="radio dialog" />
+            android:text="persistent bottom sheet" />
 
         <TextView
             android:layout_width="match_parent"

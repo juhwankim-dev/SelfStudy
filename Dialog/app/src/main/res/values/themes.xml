@@ -16,5 +16,7 @@
 
     <style name="CustomDialog2Theme">
         <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:windowMinWidthMajor">50%</item>
+        <item name="android:windowMinWidthMinor">50%</item>
     </style>
 </resources>

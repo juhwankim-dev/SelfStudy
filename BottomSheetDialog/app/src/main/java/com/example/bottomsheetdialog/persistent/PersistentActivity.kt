@@ -1,20 +1,20 @@
-package com.example.bottomsheetdialog
+package com.example.bottomsheetdialog.persistent
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.example.bottomsheetdialog.databinding.ActivityPersistentBottomSheetBinding
+import com.example.bottomsheetdialog.databinding.ActivityPersistentBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
-class PersistentBottomSheetActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPersistentBottomSheetBinding
+class PersistentActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPersistentBinding
     lateinit var behavior: BottomSheetBehavior<LinearLayout>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPersistentBottomSheetBinding.inflate(layoutInflater)
+        binding = ActivityPersistentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initEvent()
@@ -62,5 +62,5 @@ class PersistentBottomSheetActivity : AppCompatActivity() {
         })
     }
 
-    private val TAG = "PersistentBottomSheetAc"
+    private val TAG = "PersistentActivity"
 }

@@ -14,7 +14,10 @@
         android:theme="@style/Theme.BottomSheetDialog"
         tools:targetApi="31">
         <activity
-            android:name=".PersistentBottomSheetActivity"
+            android:name=".Example1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".persistent.PersistentActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
