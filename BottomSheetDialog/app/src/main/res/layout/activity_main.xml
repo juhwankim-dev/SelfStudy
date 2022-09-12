@@ -41,7 +41,19 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="modal example 3" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="persistent bottom sheet" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="persistent example 1" />
 
         <TextView
             android:layout_width="match_parent"
@@ -59,6 +71,6 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="#4169e1"
-            android:text="https://todaycode.tistory.com/184" />
+            android:text="https://todaycode.tistory.com/186" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

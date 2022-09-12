@@ -21,4 +21,12 @@
     <style name="RoundCornerModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/white_round_top_border_20</item>
     </style>
+
+    <style name="TransParentBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransParentModalStyle</item>
+    </style>
+
+    <style name="TransParentModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>
