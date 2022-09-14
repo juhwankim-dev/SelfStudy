@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ssafy.viewpagerproject.advanced.*
-import com.ssafy.viewpagerproject.basic.AnimationVPActivity
-import com.ssafy.viewpagerproject.basic.DefaultVPActivity
-import com.ssafy.viewpagerproject.basic.MarginVP2Activity
-import com.ssafy.viewpagerproject.basic.MarginVPActivity
+import com.ssafy.viewpagerproject.basic.*
 import com.ssafy.viewpagerproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,21 +32,24 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, MarginVP2Activity::class.java))
         }
         binding.button5.setOnClickListener {
-            startActivity(Intent(this, VPWithIndicatorActivity::class.java))
+            startActivity(Intent(this, MultipleItemVPActivity::class.java))
         }
         binding.button6.setOnClickListener {
-            startActivity(Intent(this, VPWithFragmentActivity::class.java))
+            startActivity(Intent(this, VPWithIndicatorActivity::class.java))
         }
         binding.button7.setOnClickListener {
-            startActivity(Intent(this, VPWithTabLayoutActivity::class.java))
+            startActivity(Intent(this, VPWithFragmentActivity::class.java))
         }
         binding.button8.setOnClickListener {
-            startActivity(Intent(this, BannerVPActivity::class.java))
+            startActivity(Intent(this, VPWithTabLayoutActivity::class.java))
         }
         binding.button9.setOnClickListener {
-            startActivity(Intent(this, InfiniteVPActivity::class.java))
+            startActivity(Intent(this, BannerVPActivity::class.java))
         }
         binding.button10.setOnClickListener {
+            startActivity(Intent(this, InfiniteVPActivity::class.java))
+        }
+        binding.button11.setOnClickListener {
             startActivity(Intent(this, AutoScrollVPActivity::class.java))
         }
     }

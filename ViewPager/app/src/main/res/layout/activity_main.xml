@@ -36,34 +36,40 @@
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewPager with Indicator" />
+        android:text="Multiple Item ViewPager" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewPager with Fragment" />
+        android:text="ViewPager with Indicator" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewPager with Tablayout" />
+        android:text="ViewPager with Fragment" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Banner ViewPager" />
+        android:text="ViewPager with Tablayout" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Infinite ViewPager" />
+        android:text="Banner ViewPager" />
 
     <Button
         android:id="@+id/button10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Infinite ViewPager" />
+
+    <Button
+        android:id="@+id/button11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="AutoScroll ViewPager" />
