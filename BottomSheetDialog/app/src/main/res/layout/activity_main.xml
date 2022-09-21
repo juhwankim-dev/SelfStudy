@@ -71,6 +71,6 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="#4169e1"
-            android:text="https://todaycode.tistory.com/186" />
+            android:text="https://todaycode.tistory.com/185" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

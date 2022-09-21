@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 이 레이아웃은 여기서 투명하게 만들 필요가 없습니다 (애초에 불가능) -->
+    <!-- 코드상에서 직접 style을 적용해 줄 거예요 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -34,6 +36,8 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- 텍스트 아래에 들어갈 View의 background를 둥근 모서리로 지정해주세요 -->
+    <!-- 들어갈 View가 여러 개라면 layout이나 cardView로 감싸 모서리를 둥글게 해주세요 -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -11,7 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 // 선택한 옵션 값을 유지하기 위해 싱글톤으로 만듦
 object ModalExample3 : BottomSheetDialogFragment() {
-    private var binding: ModalExample3Binding? = null
+    lateinit var binding: ModalExample3Binding
     private val list = arrayListOf (
         Sort(R.drawable.ic_chart, "판매 인기 순"),
         Sort(R.drawable.ic_down, "낮은 가격 순"),
@@ -29,13 +29,13 @@ object ModalExample3 : BottomSheetDialogFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = ModalExample3Binding.inflate(inflater, container, false)
-        return binding!!.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding!!.rvSort.apply {
+        binding.rvSort.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = sortAdapter
 
@@ -47,13 +47,8 @@ object ModalExample3 : BottomSheetDialogFragment() {
             })
         }
 
-        binding!!.ivClose.setOnClickListener {
+        binding.ivClose.setOnClickListener {
             dismiss()
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
     }
 }

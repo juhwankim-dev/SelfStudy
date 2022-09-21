@@ -9,7 +9,7 @@ import com.example.bottomsheetdialog.databinding.ModalExample1Binding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ModalExample1 : BottomSheetDialogFragment()  {
-    private var binding: ModalExample1Binding? = null
+    lateinit var binding: ModalExample1Binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,31 +18,26 @@ class ModalExample1 : BottomSheetDialogFragment()  {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = ModalExample1Binding.inflate(inflater, container, false)
-        return binding!!.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding!!.tvReject.apply {
+        binding.tvReject.apply {
             paintFlags = Paint.UNDERLINE_TEXT_FLAG // 밑줄
             setOnClickListener {
                 dismiss()
             }
         }
 
-        binding!!.ivClose.setOnClickListener {
+        binding.ivClose.setOnClickListener {
             dismiss()
         }
 
-        binding!!.btnEventOn.setOnClickListener {
+        binding.btnEventOn.setOnClickListener {
             dismiss()
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
     }
 
     companion object {

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Persistent Bottom Sheet과의 상호작용을 위해 CoordinatorLayout 사용 (필수) -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -30,6 +31,7 @@
     </LinearLayout>
 
     <!-- Persistent Bottom Sheet -->
+    <!-- behavior 속성을 여기서 적용합니다 -->
     <LinearLayout
         android:id="@+id/persistent_bottom_sheet"
         android:layout_width="match_parent"
