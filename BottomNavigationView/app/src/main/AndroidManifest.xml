@@ -14,7 +14,13 @@
         android:theme="@style/Theme.BottomNavigationView"
         tools:targetApi="31">
         <activity
-            android:name=".JetpackNavigationActvitiy"
+            android:name=".NavigationExample3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".NavigationExample2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".NavigationExample1Actvitiy"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
