@@ -27,5 +27,11 @@ class MainActivity : AppCompatActivity() {
         binding.button3.setOnClickListener {
             startActivity(Intent(this, NavigationExample3Activity::class.java))
         }
+        binding.button4.setOnClickListener {
+            startActivity(Intent(this, NavigationExample4Activity::class.java))
+        }
+        binding.button5.setOnClickListener {
+            startActivity(Intent(this, NavigationExample5Activity::class.java))
+        }
     }
 }

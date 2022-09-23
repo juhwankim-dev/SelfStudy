@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF0E6"
-    tools:context=".fragments.HomeFragment">
+    android:background="#C8D2E3"
+    tools:context=".fragments.AddFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Home Fragment"
+        android:text="Add Fragment"
         android:textSize="36sp"/>
 
 </LinearLayout>

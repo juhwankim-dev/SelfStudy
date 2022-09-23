@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NavigationExample2Activity">
+    tools:context=".NavigationExample5Activity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fcv_example2"
+        android:id="@+id/fcv_example5"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bnv_example2"
+        app:layout_constraintBottom_toTopOf="@+id/bnv_example5"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 
-    <!-- itemIconTint: 아이콘 색상 -->
-    <!-- itemTextColor: 아이콘 밑에 있는 텍스트 색상 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bnv_example2"
+        android:id="@+id/bnv_example5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemIconTint="@drawable/menu_selector_color"
-        app:itemTextColor="@drawable/menu_selector_color"
+        android:background="@drawable/white_round_top_border_20"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu_example2"/>
+        app:menu="@menu/bottom_nav_menu_example1"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
