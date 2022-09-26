@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 저는 dataBinding을 사용해요. -->
+<!-- dataBinding을 사용하기 위해서는 layout 태그가 가장 바깥에서 감싸고 있어야 해요 -->
+<!-- Alt + Enter를 누르면 편하게 dataBinding을 사용하기 위한 형태로 변경할 수 있어요. -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.MainActivity">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

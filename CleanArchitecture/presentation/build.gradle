@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -27,14 +29,44 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    // 저는 dataBinding을 사용합니다.
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
+    // presentation은 domain과 data를 알고 있습니다.
+    implementation project(':domain')
+    implementation project(':data')
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    // Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$gson_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rx_java_adapter_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    // viewModel scope
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+
+    // viewModels()
+    implementation 'androidx.activity:activity-ktx:1.2.0'
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version"
 }

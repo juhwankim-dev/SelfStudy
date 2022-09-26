@@ -1,4 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+// 라이브러리 버전을 여기서 관리합니다.
+buildscript {
+    ext {
+        nav_version = "2.4.2"
+        retrofit_version = "2.9.0"
+        gson_version = "2.9.0"
+        okhttp_version = "4.9.0"
+        rx_java_adapter_version = "2.5.0"
+        room_version = "2.4.0"
+        hilt_version = "2.38.1"
+        livedata_version = "2.4.1"
+        lottie_version = "4.2.1"
+        coroutine_version = "1.4.2"
+        google_service="4.3.10"
+        fcm="23.0.4"
+        paging_version = "3.0.0"
+        shimmer_version="0.5.0"
+    }
+    dependencies {
+        // hilt 사용을 위해 추가합니다.
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
+}
+
 plugins {
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false
